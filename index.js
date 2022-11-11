@@ -23,7 +23,7 @@ const { allGenres, allPlatforms } = require('./src/routes/controllers');
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
-  server.listen(3001, () => {
+  server.listen($PORT, () => {
     console.log('BACKEND ====> listening at 3001'); // eslint-disable-line no-console
 
     allGenres();
