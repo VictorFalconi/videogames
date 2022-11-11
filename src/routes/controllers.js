@@ -158,40 +158,6 @@ async function allPlatforms() {
 
 };
 
-/*
-BUSQUEDA DE PLATAFORMAS SOLAMENTE DE LOS 100 JUEGOS QUE TRAIGO DE LA API
-
-async function allPlatforms() {
-
-    let platformsFind = await Platform.findAll();
-    let platforms = [];
-
-    if (!platformsFind.length) {
-        
-        let url = `http://api.rawg.io/api/games?key=${API_KEY}`;
-        for (let i = 1; i <= 5; i++) {
-            let pages = await axios.get(url);
-        
-            pages.data.results.forEach((game) => {
-                platforms.push(game.platforms.map((p) => p.platform).map(({id, name}) => {return {id ,name}}));
-            });
-            url = pages.data.next;
-        };
-    };
-
-    let flatPlatforms = platforms.flat()
-    flatPlatforms.forEach(el => {
-        Platform.findOrCreate({
-            where: {name: el.name, id: el.id},
-
-        })
-    });
-
-    flatPlatforms = await Platform.findAll();
-    return flatPlatforms
-};
-*/
-
 module.exports = {
 	allVideogames,
     videogamesByName,
