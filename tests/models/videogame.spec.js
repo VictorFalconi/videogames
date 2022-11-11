@@ -1,5 +1,4 @@
 const { Videogame, conn } = require('../../src/db.js');
-const { expect } = require('chai');
 
 describe('Videogame model', () => {
   before(() => conn.authenticate()
@@ -19,9 +18,9 @@ describe('Videogame model', () => {
   describe('Validators', () => {
     beforeEach(() => Videogame.sync({ force: true }));
     describe('released', () => {
-      it('should throw an error if released is no required', (done) => {
+      it('should throw an error if released is not required', (done) => {
         Videogame.create({})
-          .then(() => done(new Error('It requires that released is required')))
+          .then(() => done(new Error('It requires that released field is required')))
           .catch(() => done());
       });
     });
@@ -29,9 +28,9 @@ describe('Videogame model', () => {
   describe('Validators', () => {
     beforeEach(() => Videogame.sync({ force: true }));
     describe('description', () => {
-      it('should throw an error if description is no required', (done) => {
+      it('should throw an error if description is not required', (done) => {
         Videogame.create({})
-          .then(() => done(new Error('It requires that description is required')))
+          .then(() => done(new Error('It requires that description field is required')))
           .catch(() => done());
       });
     });
