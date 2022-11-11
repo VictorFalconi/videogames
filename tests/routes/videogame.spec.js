@@ -10,7 +10,6 @@ const videogame = {
 };
 
 describe('genres', () => {
-
   describe("Get genres:", function () {
 		it("GET respons with status 200", function () {
 			return agent.get("/genres").expect(function (res) {
