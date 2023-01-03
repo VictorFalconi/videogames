@@ -61,6 +61,18 @@ router.post('/videogames', async (req, res, next) => {
     }
 });
 
+router.delete('/videogames', async(req, res, next) => {
+    const { name } = req.body;
+    try {
+        const count = await Videogame.destroy({where:{name: name}});
+        if(count > 0) res.status(200).send(`videojuego ${name} eliminado`);
+        else res.status(404).send('No se encontró el videojuego');
+    }
+    catch(e) {
+        next(e);
+    }
+})
+
 
 
 module.exports = router;

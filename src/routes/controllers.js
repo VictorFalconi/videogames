@@ -19,7 +19,6 @@ async function allVideogames() {
                 image: game.background_image,
                 genres: game.genres.map(({id, name}) => {return {id ,name}}),
                 platforms: game.platforms.map((p) => p.platform).map(({id, name}) => {return {id ,name}}),
-
             });
         });
         url = pages.data.next;
