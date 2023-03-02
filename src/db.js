@@ -3,7 +3,7 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const sequelize =
-  new Sequelize(`postgres://videogames_database_user:jvfutK2l1r5DOO7hitZel9e8yGeTEIiy@dpg-cg09fi64dad93e10u9f0-a.oregon-postgres.render.com/videogames_database`, {
+  new Sequelize(`postgres://videogames_database_user:jvfutK2l1r5DOO7hitZel9e8yGeTEIiy@dpg-cg09fi64dad93e10u9f0-a.oregon-postgres.render.com/videogames_database?ssl=true`, {
   logging: false,
   native: false,
   });
