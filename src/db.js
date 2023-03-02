@@ -3,17 +3,20 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const sequelize =
-  //new Sequelize(`postgres://videogames_database_user:jvfutK2l1r5DOO7hitZel9e8yGeTEIiy@dpg-cg09fi64dad93e10u9f0-a.oregon-postgres.render.com:5432/videogames_database`, {
-  new Sequelize({
-    database: 'videogames_database', 
-    user: 'videogames_database_user', 
-    password: 'jvfutK2l1r5DOO7hitZel9e8yGeTEIiy',   
-    host: 'dpg-cg09fi64dad93e10u9f0-a.oregon-postgres.render.com',
-    port: '5432',  
-    dialect: 'postgres', // one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' 
-    logging: false, // set to console.log to see the raw SQL queries
-    native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  new Sequelize(`postgres://videogames_database_user:jvfutK2l1r5DOO7hitZel9e8yGeTEIiy@dpg-cg09fi64dad93e10u9f0-a.oregon-postgres.render.com/videogames_database`, {
+  logging: false,
+  native: false,
   });
+  // new Sequelize({
+  //   database: 'videogames_database', 
+  //   user: 'videogames_database_user', 
+  //   password: 'jvfutK2l1r5DOO7hitZel9e8yGeTEIiy',   
+  //   host: 'dpg-cg09fi64dad93e10u9f0-a.oregon-postgres.render.com',
+  //   port: '5432',  
+  //   dialect: 'postgres', // one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' 
+  //   logging: false, // set to console.log to see the raw SQL queries
+  //   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  // });
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
